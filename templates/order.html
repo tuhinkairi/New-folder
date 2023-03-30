@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perchase | Pro-Cart</title>
+{% extends 'layout.html' %}
+{% block body %}
+
+    <main class="bg-gray-100 ">
+        <!-- short category menu show -->
+        <section id="short-category"
+            class="pop-category absolute h-fit w-full z-50 flex flex-wrap sm:hidden bg-white shadow-md "
+            style="transform :translateX(-100vw)">
+            <div>
+                <ul class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                    <li class="w-full pl-3 py-3 font-normal">Top Categories</li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Mens fashion</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Womens fashion</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Kids fashion</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Kitchen items</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Trending fashion</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                    <li class="w-full pl-3 py-3 font-normal">More Categorys</li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Mobile & Accessories</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Electronics</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Sports, Fitness & Outdoor</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Computers & Gaming</a></li>
+
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Books & Music</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Beauti Product</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                    <li class="w-full pl-3 py-3 font-normal">Trending Searches</li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>Mens T-shert</a></li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>Make up kits</a></li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>5G Smart Phones</a></li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>Perfume</a></li>
+
+
+                </ul>
+            </div>
+        </section>
+        <!-- items fof wish list -->
+        <section class="md:px-16 py-5 ">
+            <h1 class="sm:text-3xl text-2xl  title-font mb-4 text-gray-700 font-bold text-center">User Data</h1>
+
+            <form class="w-full flex-col items-center justify-center space-y-4" onsubmit="popup()" action="post">
+                <div class="w-full flex flex-wrap justify-around items-center space-y-3">
+                    <span class="px-5 pt-3 w-[400px]">
+
+                        <label class="text-lg font-sm text-gray-500 font-semibold" for="fname">First Name</label>
+                        <input class="w-full py-1 px-1 rounded-md focus:bg-white border" name="first name" type="text"
+                            placeholder="Your first name" required>
+                    </span>
+                    <span class="px-5 w-[400px]">
+                        <label class="text-lg font-sm text-gray-500 font-semibold" for="lname">Last Name</label>
+                        <input class="w-full py-1 px-1 rounded-md focus:bg-white border" name="last name" type="text"
+                            placeholder="Your last name" required>
+                    </span>
+                    <span class="px-5 w-[400px]">
+
+                        <label class="block text-lg font-sm text-gray-500 font-semibold" for="email">Email</label>
+                        <input class=" w-full py-1 px-1 rounded-md focus:bg-white border" type="email" name="email"
+                            id="email" placeholder="something@gmail.com" required>
+                    </span>
+                    <span class="px-5 w-[400px]">
+
+                        <label class="block text-lg font-sm text-gray-500 font-semibold" for="pno">Phone Number</label>
+                        <input class="w-full py-1 px-1 rounded-md focus:bg-white border" type="tel"
+                            placeholder="Enter your phone number" name="phone number" id="pno" required>
+                    </span>
+                    <span class="px-5 w-[400px]">
+                        <label class="block text-lg font-sm text-gray-500 font-semibold" for="address">Address</label>
+                        <textarea class="w-full py-1 px-1 rounded-md focus:bg-white border" type="text" name="address"
+                            id="address_text" placeholder="Address" cols="5" required></textarea>
+                    </span>
+
+                </div>
+                <div id="product-control" class="product-showing ">
+
+                   
+                    <!-- product-card -->
+
+                    <div class="products w-full flex-wrap flex py-5 px-3 items-center bg-white justify-around border-2">
+                        <img src="static/img/pic12.jpg" class="border rounded-md " width="70" height="70"
+                            alt="products">
+                        <h1 class=" max-w-[250px] mx-2 text-gray-400 font-semibold capitalize text-lg">codehacker 
+                            T-shert</h1>
+                        <section class="flex justify-around items-center">
+
+                            <!-- product-price -->
+
+                            <label for="prodct-price" class="text-gray-700 font-semibold ">Price - </label>
+                            <input type="text" class="product-price w-[50px] border-none " min="0" value="279.93"
+                                name="p-price" readonly>
+
+                            <!-- product quantity -->
+
+                            <span class="flex items-center justify-center space-x-2">
+                                <button type="button"
+                                    class="add_price flex items-center justify-center text-gray-700 active:text-green-500 cursor-pointer">
+                                    <span class="ml-2 material-symbols-outlined ">
+                                        add_circle
+                                    </span>
+                                </button>
+                                <input class="product-quantity outline-none w-[35px]" name="quantity" min="0"
+                                    type="tel" value="0" readonly>
+                                <button type="button"
+                                    class="min_price flex items-center justify-center active:text-green-500 text-gray-700 cursor-pointer w-fit">
+                                    <span class="material-symbols-outlined">
+                                        do_not_disturb_on
+                                    </span>
+                                </button>
+                                <span class=" w-fit flex flex-nowrap font-bold text-gray-700"><input type="text"
+                                        name="ppp" class="ppp w-[50px] outline-none" value="0" readonly> &#x20B9;</span>
+                                        <!-- remove product -->
+                                        <button type="button" class="del-items"><span class="material-symbols-outlined px-5 flex justify-center items-center text-gray-700"> delete</span></button>
+                            </span>
+                        </section>
+                    </div>
+                    <!-- product-card -->
+
+                    <div class="products w-full flex-wrap flex py-5 px-3 items-center bg-white justify-around border-2">
+                        <img src="static/img/pic11.jpg" class="border rounded-md " width="70" height="70"
+                            alt="products">
+                        <h1 class=" max-w-[250px] mx-2 text-gray-400 font-semibold capitalize text-lg">codehacker 
+                            T-shert</h1>
+                        <section class="flex justify-around items-center">
+
+                            <!-- product-price -->
+
+                            <label for="prodct-price" class="text-gray-700 font-semibold ">Price - </label>
+                            <input type="text" class="product-price w-[50px] border-none " min="0" value="499.00"
+                                name="p-price" readonly>
+
+                            <!-- product quantity -->
+
+                            <span class="flex items-center justify-center space-x-2">
+                                <button type="button"
+                                    class="add_price flex items-center justify-center text-gray-700 active:text-green-500 cursor-pointer">
+                                    <span class="ml-2 material-symbols-outlined ">
+                                        add_circle
+                                    </span>
+                                </button>
+                                <input class="product-quantity outline-none w-[35px]" name="quantity" min="0"
+                                    type="tel" value="0" readonly>
+                                <button type="button"
+                                    class="min_price flex items-center justify-center active:text-green-500 text-gray-700 cursor-pointer w-fit">
+                                    <span class="material-symbols-outlined">
+                                        do_not_disturb_on
+                                    </span>
+                                </button>
+                                <span class=" w-fit flex flex-nowrap font-bold text-gray-700"><input type="text"
+                                        name="ppp" class="ppp w-[50px] outline-none" value="0" readonly> &#x20B9;</span>
+                                        <!-- remove product -->
+                                        <button type="button" class="del-items"><span class="material-symbols-outlined px-5 flex justify-center items-center text-gray-700"> delete</span></button>
+                            </span>
+                        </section>
+                    </div>
+                    <!-- product-card -->
+
+                    <div class="products w-full flex-wrap flex py-5 px-3 items-center bg-white justify-around border-2">
+                        <img src="static/img/pic8.jpg" class="border rounded-md " width="70" height="70"
+                            alt="products">
+                        <h1 class=" max-w-[250px] mx-2 text-gray-400 font-semibold capitalize text-lg">codehacker 
+                            T-shert</h1>
+                        <section class="flex justify-around items-center">
+
+                            <!-- product-price -->
+
+                            <label for="prodct-price" class="text-gray-700 font-semibold ">Price - </label>
+                            <input type="text" class="product-price w-[50px] border-none " min="0" value="729.59"
+                                name="p-price" readonly>
+
+                            <!-- product quantity -->
+
+                            <span class="flex items-center justify-center space-x-2">
+                                <button type="button"
+                                    class="add_price flex items-center justify-center text-gray-700 active:text-green-500 cursor-pointer">
+                                    <span class="ml-2 material-symbols-outlined ">
+                                        add_circle
+                                    </span>
+                                </button>
+                                <input class="product-quantity outline-none w-[35px]" name="quantity" min="0"
+                                    type="tel" value="0" readonly>
+                                <button type="button"
+                                    class="min_price flex items-center justify-center active:text-green-500 text-gray-700 cursor-pointer w-fit">
+                                    <span class="material-symbols-outlined">
+                                        do_not_disturb_on
+                                    </span>
+                                </button>
+                                <span class=" w-fit flex flex-nowrap font-bold text-gray-700"><input type="text"
+                                        name="ppp" class="ppp w-[50px] outline-none" value="0" readonly> &#x20B9;</span>
+                                        <!-- remove product -->
+                                        <button type="button" class="w-fit del-items"><span class="material-symbols-outlined px-5 flex justify-center items-center text-gray-700"> delete</span></button>
+                            </span>
+                        </section>
+                    </div>
+                    <!-- product-card -->
+
+                    <div class="products w-full flex-wrap flex py-5 px-3 items-center bg-white justify-around border-2">
+                        <img src="static/img/pic10.jpg" class="border rounded-md " width="70" height="70"
+                            alt="products">
+                        <h1 class=" max-w-[250px] mx-2 text-gray-400 font-semibold capitalize text-lg">codehacker 
+                            T-shert</h1>
+                        <section class="flex justify-around items-center">
+
+                            <!-- product-price -->
+
+                            <label for="prodct-price" class="text-gray-700 font-semibold ">Price - </label>
+                            <input type="text" class="product-price w-[50px] border-none " min="0" value="349.99"
+                                name="p-price" readonly>
+
+                            <!-- product quantity -->
+
+                            <span class="flex items-center justify-center space-x-2">
+                                <button type="button"
+                                    class="add_price flex items-center justify-center text-gray-700 active:text-green-500 cursor-pointer">
+                                    <span class="ml-2 material-symbols-outlined ">
+                                        add_circle
+                                    </span>
+                                </button>
+                                <input class="product-quantity outline-none w-[35px]" name="quantity" min="0"
+                                    type="tel" value="0" readonly>
+                                <button type="button"
+                                    class="min_price flex items-center justify-center active:text-green-500 text-gray-700 cursor-pointer w-fit">
+                                    <span class="material-symbols-outlined">
+                                        do_not_disturb_on
+                                    </span>
+                                </button>
+                                <span class=" w-fit flex flex-nowrap font-bold text-gray-700"><input type="text"
+                                        name="ppp" class="ppp w-[50px] outline-none" value="0" readonly> &#x20B9;</span>
+                                        <!-- remove product -->
+                                        <button type="button" class="del-items"><span class="material-symbols-outlined px-5 flex justify-center items-center text-gray-700"> delete</span></button>
+                            </span>
+                        </section>
+                    </div>
+           
+
+               
+
+                    <!-- price-section -->
+                    <div id="pricesetting"
+                        class="w-full border flex px-5  mt-5 bg-white py-5 items-center justify-between">
+                        <label for="price" class="text-lg font-sm text-gray-700 font-semibold">Price</label>
+                        <span>
+
+                            <input type="text" min="0" name="main-price" id="main-price"
+                                class=" focus:outline-none py-2 px-2 w-[100px] font-gray-700 font-semibold text-gray-700"
+                                value="0" readonly>
+                            <span class="w-fit font-bold text-gray-700">&#x20B9;</span>
+                        </span>
+                    </div>
+                    
+                </div>
+                <button id="submit-order" type="submit"
+                    class=" w-fit m-auto lg:mt-2 xl:mt-0 block text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-900 rounded">place
+                    order</button>
+            </form>
+        </section>
+        <script>
+            const popup = () => {
+                if (confirm('do you want to continue?')) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        </script>
+        <script src="{{ url_for('static',filename='js/category-slider.js') }}"></script>
+        <script src="{{ url_for('static',filename='js/controlitems.js') }}"></script>
+        <script src="{{ url_for('static',filename='js/product-price.js') }}"></script>
+    </main>
+    {% endblock %}

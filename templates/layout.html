@@ -1,0 +1,280 @@
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,1,0" />
+</head>
+
+<body class="overflow-x-hidden w-screen max-h-screen  sm:h-auto  sm:pb-0 ">
+<header class=" bg-rose-600 text-gray-50 shadow-md sm:sticky top-0 z-50">
+    <section class="large-menu md:block hidden">
+        <section class="px-2 lg:px-16  bg-rose-700 flex justify-between items-center text-sm py-2">
+            <h1 class="w-fit capitalize">best deals like never get before</h1>
+            <ul class="flex space-x-3">
+                <li><a class="hover:underline" href="#">Impact@Snapdeal</a> </li>
+                <li><a class="hover:underline" href="#">Gift Cards</a></li>
+                <li><a class="hover:underline" href="#">Help Center</a></li>
+                <li><a class="hover:underline" href="#">Sell On Snapdeal</a></li>
+            </ul>
+        </section>
+        <nav class="px-2 lg:px-16">
+            <ul class="flex justify-between items-center">
+                <li class="title">
+                    <h1 class="w-fit font-bold text-3xl " style="font-family: 'Lobster', 'Pacifico',cursive;
+                ">Pro-Cart</h1>
+                </li>
+                <li>
+                    <form class="flex justify-center items-center" action="">
+                        <input type="search" class="w-[33vw] px-3 py-2 bg-white text-gray-400 outline-none rounded "
+                            placeholder="Search Products & brands">
+                        <button type="Submit" class="bg-gray-900 hover:bg-gray-800 rounded  px-4 py-2">search</button>
+                    </form>
+                </li>
+                <li class="flex items-center justify-around"><a href="/cart"><button
+                        class="py-4 flex justify-center items-center px-4 md:px-7 border-x border-[rgb(0,0,0,.2)]">Cart
+                        <span class="ml-2 material-symbols-outlined">
+                            shopping_cart
+                        </span></button></a>
+                        <a href="/login" target="_blank">
+                    <button
+                        class="flex pl-3 md:pl-6 h-full justify-center items-center pr-1 py-2 hover:bg-gray-800 ">Sign
+                        Up <span class="ml-3 material-symbols-outlined" style="font-size:40px">
+                            account_circle
+                        </span></button></a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="mini-menu block md:hidden">
+        <nav>
+            <ul class="flex justify-between bg-rose-600 items-center px-3 py-2  text-gray-50">
+                <li class="title">
+                    <h1 class="w-fit font-bold text-2xl " style="font-family: 'Lobster', 'Pacifico',cursive;
+                ">Pro-Cart</h1>
+                </li>
+                <a href="/login">
+                <button
+                    class="font-bold px-3 py-2 capitalize cursor-pointer text-gray-50 hover:bg-gray-800 bg-gray-900 text-sm rounded">sign
+                    up</button></a>
+                </li>
+            </ul>
+            <div class="py-2 border-t border-[rgb(0,0,0,.2)]">
+                <form class="flex justify-center items-center" action="">
+                    <input type="search" class="w-2/3 px-3 py-2 text-gray-400 rounded outline-none  "
+                        placeholder="Search Products & brands">
+                    <button class="bg-gray-900 hover:bg-gray-800 rounded px-4 py-2 font-semibold">Search</button>
+                </form>
+            </div>
+        </nav>
+
+
+    </section>
+</header>
+{% block body %}
+{% endblock %} 
+<footer class="text-gray-400 border  body-font sticky z-50 bottom-0 sm:static">
+    <section class="short-footer text-center shadow-md bg-white ">
+        <nav>
+            <ul class="grid grid-cols-5 justify-center sm:hidden">
+                <li><a class="grid grid-rows-2 px-4 py-2 justify-center items-center text-gray-500 hover:text-rose-500 text-sm"
+                        href="/">
+                        <span class=" material-symbols-outlined ">
+                            home
+                        </span>
+                        <span clas=" font-semibold text-sm ">Home</span>
+                    </a></li>
+                <li><button id="category-btn" type="button"
+                        class="w-full grid grid-rows-2 px-4 py-2 justify-center items-center text-gray-500 hover:text-rose-500 text-sm">
+                        <span class=" material-symbols-outlined ">
+                            category
+                        </span>
+                        <span clas=" font-semibold text-sm ">Category</span>
+                    </button></li>
+                <li><a class="grid grid-rows-2 px-4 py-2 justify-center items-center text-gray-500 hover:text-rose-500 text-sm"
+                        href="/wishlist">
+                        <span class=" material-symbols-outlined ">
+                            favorite
+                        </span>
+                        <h1 clas=" font-semibold text-sm ">Wishlist</h1>
+                    </a></li>
+                <li><a class="grid grid-rows-2 px-4 py-2 justify-center items-center text-gray-500 hover:text-rose-500 text-sm"
+                        href="/order">
+                        <span class=" material-symbols-outlined block ">shopping_cart</span>
+                        <h1 clas="font-semibold text-sm ">Orders</h1>
+                    </a></li>
+                <li><a class="grid grid-rows-2 px-4 py-2 justify-center items-center text-gray-500 hover:text-rose-500 text-sm"
+                        href="/account">
+                        <span class=" material-symbols-outlined block ">account_circle</span>
+                        <h1 clas="font-semibold text-sm ">Account</h1>
+                    </a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="large-footer hidden sm:block">
+        <div class="container px-5 py-8 mx-auto">
+            <div class="flex flex-wrap md:text-left text-center order-first">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font tracking-widest text-sm mb-3 font-semibold text-gray-500">
+                        POLICY INFO</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">
+                                Terms of Sale & Use
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">
+                                Report Abuse & Takedown Policy
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">
+                                FAQ
+                            </a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font  tracking-widest text-sm mb-3 font-semibold text-gray-500">
+                        COMPANY</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Careers</a>
+                        </li>
+                        <li>
+                            <a href="blog.html"
+                                class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Blog</a>
+                        </li>
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Sitemaps</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"
+                                class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Contact
+                                Us</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font tracking-widest text-sm mb-3 font-semibold text-gray-500">
+                        BUSINESS</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Shopping
+                                app</a>
+                        </li>
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Sell on
+                                Pro-Cart</a>
+                        </li>
+                        <li>
+                            <a class="hover:underline cursor-pointer text-gray-400 hover:text-gray-800">Media
+                                Enquiries</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font tracking-widest text-sm mb-3 font-semibold text-gray-500">
+                        SUBSCRIBE</h2>
+                    <div
+                        class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+                        <div class="relative sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
+                            <input type="text" id="footer-field" name="footer-field"
+                                placeholder="Something@gamil.com"
+                                class="w-48 bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-gray-200 focus:border-gray-800 text-base outline-none text-gray-700 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out">
+                        </div>
+                        <button
+                            class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-900 rounded">Subscribe</button>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-2 md:text-left text-center">
+
+                        Register now to get updates on promotions and coupons.
+                    </p>
+                </div>
+                <!-- payment methods -->
+                <div class="py-5  w-full">
+                    <h1 class="font-semibold text-center md:text-start text-gray-500">PAYMENT</h1>
+                    <ul class="flex space-x-3 flex-wrap items-center md:justify-start justify-center ">
+                        <li><a href="#"><img class="w-[60px]" src="static/icon/credit-card.png"
+                                    alt="payment-icons"></a>
+                        </li>
+                        <li><a href="#"><img class="w-[60px]" src="static/icon/debit-card.png"
+                                    alt="payment-icons"></a>
+                        </li>
+                        <li><a href="#"><img class="w-[60px]" src="static/icon/upi.png" alt="payment-icons"></a>
+                        </li>
+                        <li><a href="#"><img class="w-[60px]" src="static/icon/cod.png" alt="payment-icons"></a>
+                        </li>
+                        <li><a href="#"><img class="w-[60px]" src="static/icon/net-banking.png"
+                                    alt="payment-icons"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-rose-500">
+            <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2"
+                        class="w-10 h-10 text-rose-500 p-2 bg-white rounded-full" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl text-white" style="font-family: 'Lobster', 'Pacifico',cursive;
+                ">Pro-Cart</span>
+                </a>
+                <p class="text-sm text-white sm:ml-6 sm:mt-0 mt-4">© 2023 Pro-Cart —
+                    <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-white ml-1"
+                        target="_blank">@knyttneve</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                    <a class=" cursor-pointer text-white">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3  cursor-pointer text-white">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3  cursor-pointer text-white">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3  cursor-pointer text-white">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </section>
+    <script  src="{{ url_for('static',filename = 'js/category.js') }}"></script>
+        <script  src="{{ url_for('static',filename = 'js/controlitems.js') }}"></script>
+        <!-- pop up category -->
+        <script  src="{{ url_for('static',filename = 'js/extracategoryshow.js') }}">
+        </script>
+    </footer>
+</body>
+
+</html>

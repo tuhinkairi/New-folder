@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up | Pro-Cart</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="min-h-screen  w-screen">
+    <main class="h-full w-full">
+        <section class=" text-white">
+            <div class="py-5 px-10 min-h-1/3 bg-rose-500 grid grid-rows-2 ">
+                <h1 class="text-3xl font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
+                ">
+                    Pro-Cart
+                </h1>
+                <section>
+                    <h1 class=" pb-4 text-normal font-semibold capitalize ">Login / Signup</h1>
+                    <h1 class="capitalize font-semibold text-sm">Manage Orders | access wishlist | Unlock Orders</h1>
+                </section>
+            </div>
+            <div class="bg-white h-full w-full flex items-center justify-center ">
+                <!-- login form -->
+                <form id="login" class="google-sprade-sheet 
+                 space-y-8 text-center w-full px-10 h-fit mt-10" action="/login">
+                    
+                    <label id="while_number_input" class=" text-center text-gray-700 capitalize font-semibold" for="user_moble">please enter your Mobile number to <br> login/signUp for <span class="text-2xl px-1 text-rose-500 font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
+                        ">Pro-Cart</span></label>
+
+                        <!-- mobile -->
+                        
+                    <input type="tel" class="w-full border shadow-md px-3 py-3 rounded-md text-gray-700" name="number" id="number_collect" placeholder="Mobile Number" required>
+                        
+                        
+                    <button type="submit" class="w-full rounded bg-rose-500 py-3 font-semibold">Next</button>
+                </form>
+
+                <!-- sing up form -->
+                <form id="sign_up" class="hidden space-y-2 text-center w-full px-10 h-fit my-5" action="/signup">
+                    
+                    <h1 class="text-center text-gray-700 capitalize font-semibold" for=""><span class="text-2xl px-1 text-rose-500 font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
+                        ">Pro-Cart</span><br> Sing up </h1>
+                        <!-- mobile -->
+                    <section class=" grid grid-cols-2">
+                        <span class="w-full items-center just grid grid-rows-2 px-2">
+                            <label class="text-gray-700 text-sm font-semibold text-start" for="name">Your Name</label>
+                            <input type="text" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="Uname" id="Uname" placeholder="Full Name" required>
+                        </span>
+                        <span class="w-full items-center just grid grid-rows-2 px-2 ">
+                            <label class="text-gray-700 text-sm font-semibold text-start" for="Unumber">Mobile Number</label>
+                            <input type="tel" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="Unumber" id="Unumber" placeholder="Mobile Number" required>
+                        </span>
+                        
+                        <span class="w-full items-center just grid grid-rows-2 px-2 ">
+                            <label class="text-gray-700 text-sm font-semibold text-start" for="Uemail">Email</label>
+                            <input type="email" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="Uemail" id="Uemail" placeholder="Email" required>
+                        </span>
+                        <span class="w-full items-center just grid grid-rows-2 px-2 ">
+                            <label class="text-gray-700 text-sm font-semibold text-start" for="Uage">Age</label>
+                            <input type="number" class=" border shadow-md px-3 py-3 rounded-md w-fit text-gray-700" min='16' value="16" name="Uage" id="Uage"  required>
+                        </span>
+                    </section>    
+                    
+                    <span class="w-full items-center just grid grid-rows-2 px-2 ">
+                    <label class="text-gray-700 text-sm font-semibold text-start" for="Upass">Creat Password</label>
+                    <input type="first_Password" class=" border shadow-md px-3 py-3 rounded-md  text-gray-700" name="" id="Upass" onkeypress="check_pass()" onkeyup="hidepass(this.value)"  placeholder="Your Password"  required>
+                    </span>
+                   
+                    <span class="w-full items-center just grid grid-rows-2 px-2 ">
+                    <label class="text-gray-700 text-sm font-semibold text-start" for="Upass">Confirm Password</label>
+                    <input type="Password" onkeypress="check_pass()" onkeyup="hidepass(this.value)" class=" border shadow-md px-3 py-3 rounded-md  text-gray-700" name="Upassword" id="Upassvar" placeholder="Retype Password" required>
+                    </span>
+                   
+                    <button type="submit" id="send_submit" class="w-full mt-5 ll rounded bg-rose-500 py-3 font-semibold" disabled>Next</button>
+                </form>
+            </div>
+        </section>
+        <!-- hide pass -->
+        <script type="text/javascript">
+            function hidepass(password){
+                document.getElementById('Upass').type = "password"
+                document.getElementById('Upassvar').type ="password"
+                return 
+            }
+            
+            function check_pass(){
+                let first_pass=document.getElementById('Upass')
+                let confirm_pass = document.getElementById('Upassvar')
+                if(first_pass.value == confirm_pass.value && confirm_pass.value.length>=8){
+                    document.getElementById('send_submit').removeAttribute('disabled')
+                    confirm_pass.style.outlineColor='green'
+                    confirm_pass.style.borderColor='green'
+                    console.log('data',first_pass.value,confirm_pass.value)
+                }
+                else{
+                    document.getElementById('send_submit').removeAttribute('disabled')
+                    confirm_pass.style.outlineColor = "red"
+                    confirm_pass.style.borderColor = "red"
+                    console.log('get',first_pass.value ,confirm_pass.value)
+                }
+            }
+            
+        </script>
+    </main>
+</body>
+</html>

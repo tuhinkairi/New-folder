@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Pro-Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% extends 'layout.html' %}
+    {% block body %}
+    <main class="bg-gray-100">
+        <!-- short category menu show -->
+        <section id="short-category"
+            class="pop-category absolute h-fit w-full z-50 flex flex-wrap sm:hidden bg-white shadow-md "
+            style="transform :translateX(-100vw)">
+            <div>
+                <ul class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                    <li class="w-full pl-3 py-3 font-normal">Top Categories</li>
+                    {% for i in gender %}
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>{{ i }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <ul class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                    <li class="w-full pl-3 py-3 font-normal">More Categorys</li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Mobile & Accessories</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Electronics</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Sports, Fitness & Outdoor</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Computers & Gaming</a></li>
+
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Books & Music</a></li>
+                    <li class="w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]"><a
+                            class="py-3 px-8 w-full text-normal block " href='#'>Beauti Product</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                    <li class="w-full pl-3 py-3 font-normal">Trending Searches</li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>Mens T-shert</a></li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>Make up kits</a></li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>5G Smart Phones</a></li>
+                    <li class="w-full"><a
+                            class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                trending_up
+                            </span>Perfume</a></li>
+
+
+                </ul>
+            </div>
+        </section>
+        <!-- main show category -->
+        <section
+            class=" px-2 md:flex hidden lg:px-16  max-w-screen overflow-x-hidden  justify-between items-center home-show">
+            <div class=" on-md  py-4 w-full overflow-hidden flex items-start justify-between">
+                <section class="relative mr-3 w-fit h-fit">
+
+                    <ul
+                        class="bg-white min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-gray-700">
+                        <li class="w-full pl-3 py-3 font-normal">Top Categories</li>
+
+                        {% for i in gender %}
+                        <li
+                            class="cate-list w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-rose-500 border-r-0">
+                            <a class="py-3 px-8 w-full text-normal block capitalize" href='#'>{{ i }}</a></li>
+
+                        {% endfor %}
+
+                        <li class="cate-list w-full pl-3 py-3 font-normal">More Categorys</li>
+                        {% for i in category %}
+                        <li
+                            class="cate-list w-full hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-rose-500 border-r-0">
+                            <a class="py-3 px-8 w-full text-normal block capitalize" href='#'>{{ i }}</a></li>
+                        {% endfor %}
+                        <li class="w-full pl-3 py-3 font-normal">Trending Searches</li>
+                        <li class="w-full"><a
+                                class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                                href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                    trending_up
+                                </span>Mens T-shert</a></li>
+                        <li class="w-full"><a
+                                class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                                href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                    trending_up
+                                </span>Make up kits</a></li>
+                        <li class="w-full"><a
+                                class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                                href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                    trending_up
+                                </span>5G Smart Phones</a></li>
+                        <li class="w-full"><a
+                                class="py-3 px-3 w-full text-normal flex text-gray-400 items-center hover:text-gray-700 "
+                                href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                    trending_up
+                                </span>Perfume</a></li>
+
+
+                    </ul>
+                    <!-- hover extra items-show -->
+                    <section id="extra_category"
+                        class="h-3/4 w-screen justify-evenly py-5 px-4 z-20 hidden bg-rose-500 absolute top-0 left-full hover:border-l-rose-500 hover:shadow-md border border-[rgb(0,0,0,0)] hover:border-[rgb(0,0,0,0.3)]">
+
+                        <!-- lists -->
+                        <section id="items-holder" class="pb-10 h-fit flex flex-wrap w-full">
+                            <div>
+                                <ul
+                                    class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-white">
+                                    <li class="w-full pl-3 py-3 font-normal">Trending Searches</li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900 "
+                                            href='#'><span class="mr-5 material-symbols-outlined ">
+                                                trending_up
+                                            </span>Mens T-shert</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900 "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>Make up kits</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900  "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>5G Smart Phones</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900  "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>Perfume</a></li>
+
+
+                                </ul>
+                            </div>
+                            <div>
+                                <ul
+                                    class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-white">
+                                    <li class="w-full pl-3 py-3 font-normal">Trending Searches</li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900 "
+                                            href='#'><span class="mr-5 material-symbols-outlined ">
+                                                trending_up
+                                            </span>Mens T-shert</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900 "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>Make up kits</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900  "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>5G Smart Phones</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900  "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>Perfume</a></li>
+
+
+                                </ul>
+                            </div>
+                            <div>
+                                <ul
+                                    class="min-w-fit flex-col flex justify-center items-center  font-semibold text-sm text-white">
+                                    <li class="w-full pl-3 py-3 font-normal">Trending Searches</li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900 "
+                                            href='#'><span class="mr-5 material-symbols-outlined ">
+                                                trending_up
+                                            </span>Mens T-shert</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900 "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>Make up kits</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900  "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>5G Smart Phones</a></li>
+                                    <li class="w-full"><a
+                                            class="py-3 px-3 w-full text-normal flex  items-center hover:text-gray-900  "
+                                            href='#'><span class="mr-5 material-symbols-outlined hover:text-gray-500">
+                                                trending_up
+                                            </span>Perfume</a></li>
+
+
+                                </ul>
+                            </div>
+                        </section>
+
+                    </section>
+                </section>
+
+
+
+
+                <!-- slider -->
+                <div class="card-slider max-w-[71.45vw] h-fit hidden sm:block">
+
+                    <div class="flex items-center justify-start ">
+                        <div class="slider box-border w-full h-fit  rounded overflow-hidden">
+                            <div class="h-0  top-[2.8vw] lg:top-[9.3vw]  relative z-10 text-gray-50 w-1/2">
+                                <h1 class="font-bold text-3xl lg:text-4xl px-8 capitalize ">Get 50% off on populer
+                                    brands</h1>
+                                <h1
+                                    class="font-bold text-lg lg:text-2xl pl-8 pr-10 capitalize py-2 lg:py-5 text-rose-600">
+                                    mens & womens
+                                    wear
+                                    starts with jsut 499 Rupees </h1>
+                                <button
+                                    class="ml-8 bg-gray-900 hover:bg-gray-800 rounded px-4 py-2 font-semibold">Explore</button>
+                            </div>
+                            <img class="border-box w-fit" src="static/img/b4.jpg" alt="sliderimg-1">
+                        </div>
+                    </div>
+                    <!-- items-card -->
+                    <h1 class="py-5 lg:py-10 text-gray-700 font-semibold text-2xl">TRENDING PRODUCTS</h1>
+                    <section class="flex overflow-x-auto space-x-3 ">
+                        <!-- cards section -->
+                        {% for i in products %}
+                        <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
+                            <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
+                                <span class="cursor-pointer material-symbols-outlined">
+                                    add_shopping_cart
+                                </span><span class="cursor-pointer material-symbols-outlined">
+                                    favorite
+                                </span></div> <img class="rounded-md py-2 max-w-[230px]" src="{{ i.image_url }}"
+                                alt="card1">
+                            <section class="text-data pb-5 px-5 space-y-2">
+                                <h1 class="text-gray-500 font-semibold w-fit capitalize">{{ i.product_name }}
+                                </h1>
+
+                                <span class="flex items-center">
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <span class="text-gray-400 ml-3">4 Reviews</span>
+                                </span>
+
+                                <h1><span class="font-semibold"> &#x20B9;{{ i.price }} </span><span
+                                        class="text-gray-500 line-through"> 1200</span><span
+                                        class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
+
+                            </section>
+                        </div>
+                        {% endfor %}
+                    </section>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- banner homepage -->
+        <div class=" hidden sm:grid md:min-h-[500px] bg-rose-500 grid-cols-2 mb-8 md:my-8">
+            <div class=" min-w-full flex items-center justify-center overflow-x-hidden"
+                style="background:url('https://blog.placeit.net/wp-content/uploads/2022/05/Famous-Logos-and-What-You-Can-Learn-from-Them.png') no-repeat center">
+            </div>
+
+            <section class="text-white flex flex-col space-y-3 justify-center items-center text-center my-5 px-5">
+                <h1 class="text-2xl md:text-4xl font-bold capitalize">Get Flat 60% Off <br>on</h1>
+                <h1 class="text-lg md:text-2xl font-semibold capitalize ">Bags, Shoes, smart-phones, summer wear & lotes
+                    more...</h1>
+                <button class="bg-gray-900 hover:bg-gray-800 rounded px-4 py-2 font-semibold capitalize">view deals
+                    now!</button>
+
+            </section>
+        </div>
+        <!-- sponsers banner -->
+        <div class="shadow-md mb-10 bg-white text-center h-fit rounded py-5 text-rose-500 hidden sm:block">
+            <h1 class="tracking-wider text-3xl font-semibold" style="font-family: 'Lobster', 'Pacifico',cursive;">Top
+                Brands</h1>
+            <section class="flex flex-wrap justify-evenly items-center py-5">
+                <img class="rounded-full w-fit inline-block my-3 shadow shadow-gray-700"
+                    src="https://source.unsplash.com/random/100x100" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/100x101" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/100x103" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/101x101" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/101x102" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/101x100" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/102x100" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/102x101" alt="Brands">
+                <img class="rounded-full w-fit inline-block my-3 shadow mx-2 shadow-gray-700"
+                    src="https://source.unsplash.com/random/102x102" alt="Brands">
+            </section>
+        </div>
+
+        <!-- mobile show cards collections -->
+        <section id="items_container" class=" md:hidden flex justify-around items-center flex-wrap">
+            <!-- {% for i in products %}
+            <div
+                class="max-w-[50%] sm:max-w-[300px] sm:m-1 rounded-md border border-[rgb(0,0,0,.2)] sm:px-2 text-gray-700 bg-white" style="height: auto;">
+                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1 -mb-10 relative z-10">
+                    <span class="cursor-pointer material-symbols-outlined">
+                        add_shopping_cart
+                    </span><span class="cursor-pointer material-symbols-outlined">
+                        favorite
+                    </span>
+                </div>
+                <img class="rounded-md sm:py-2" src="{{ i['image_url'] }}" alt="card1">
+                <section class="text-data pb-2 sm:pb-5 px-2 sm:px-5 space-y-2">
+                    <h1 class="text-gray-500 font-semibold w-fit h-[55px] capitalize sm:h-fit">{{ i['product_title'][0:-5] }}..</h1>
+                    <span class="flex items-center">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 text-yellow-300" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 text-yellow-300" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 text-yellow-300" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 text-yellow-300" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 text-yellow-300" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                            </path>
+                        </svg>
+                        <span class="text-gray-400 ml-3">4 Reviews</span>
+                    </span>
+
+
+                    <h1><span class="font-semibold "> &#x20B9;{{ i['price'] }}</span><span
+                            class="text-gray-500 line-through " style="margin-left: 3px;">1200</span><span
+                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
+                </section>
+            </div>
+            {% endfor %} -->
+        </section>
+        <!-- the discription cards -->
+        <div
+            class="hidden sm:grid lg:px-16 border border-[rgb(0,0,0,.2)] bg-white grid-cols-4 justify-center items-center">
+            <section
+                class="space-y-3 flex flex-col h-full text-center jsutify-center border-x border-[rgb(0,0,0,.2)] px-3 py-6 items-center">
+                <img src="static/icon/payment.png" alt="icons">
+                <h1 class="uppercase text-gray-400 text-xl font-semibold">100% secure payment</h1>
+                <h1 class="capitalize text-gray-400 text-sm font-semibold px-4">moving your card details to much secure
+                    place
+                </h1>
+            </section>
+            <section
+                class="space-y-3 flex flex-col h-full text-center jsutify-center border-x border-[rgb(0,0,0,.2)] px-3 py-6 items-center">
+                <img src="static/icon/trust.png" alt="icons">
+                <h1 class="uppercase text-gray-400 text-xl font-semibold">trustpay</h1>
+                <h1 class="capitalize text-gray-400 text-sm font-semibold px-4">100% payment protection and easy return
+                    policy</h1>
+            </section>
+            <section
+                class="space-y-3 flex flex-col h-full text-center jsutify-center border-x border-[rgb(0,0,0,.2)] px-3 py-6 items-center">
+                <img src="static/icon/delivery.png" alt="icons">
+                <h1 class="uppercase text-gray-400 text-xl font-semibold">fastest delivery</h1>
+                <h1 class="capitalize text-gray-400 text-sm font-semibold px-4">get your product within 2-day delivery!
+                </h1>
+            </section>
+            <section
+                class="space-y-3 flex flex-col h-full text-center jsutify-center border-x border-[rgb(0,0,0,.2)] px-3 py-6 items-center">
+                <img src="static/icon/communication.png" alt="icons">
+                <h1 class="uppercase text-gray-400 text-xl font-semibold">24/7 help center</h1>
+                <h1 class="capitalize text-gray-400 text-sm font-semibold px-4">24/7 customer service over 6000+ team of
+                    help
+                    & support</h1>
+            </section>
+        </div>
+        <script src="{{ url_for('static',filename = 'js/alldatachange.js') }}"></script>
+        <script src="{{ url_for('static',filename = 'database_js/autoreload.js') }}"></script>
+
+    </main>
+    {% endblock %}
