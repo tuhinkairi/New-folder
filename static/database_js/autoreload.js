@@ -1,10 +1,10 @@
-const product_div = document.getElementById('items_container')
+let product_div = document.getElementById('items_container')
 
 let limit = 10
 
-async function products(limit_data) {
-    console.log(limit_data)
-    let url = `https://script.google.com/macros/s/AKfycbxXkYktl5xZwbixGaAWvSJbc9zSkZaN6bwiJX9CVN5Joxcm7-AgMhibyF0X4vf-nBjz/exec?limit=${limit_data}`
+async function products() {
+    console.log(limit)
+    let url = `https://script.google.com/macros/s/AKfycbx3y_f-9SI7XlH2xotL6Ia2G55n0qUCBjwi4uG4VF_cj46ODB0Sti1F2KocpiwCZRHY/exec?limit=${limit}`
     let re = await fetch(url)
     let response = await re.json()
     let output = response['product']
@@ -68,16 +68,16 @@ async function products(limit_data) {
     })
 
 }
-products(limit)
+products()
 function showData() {
     setTimeout(() => {
         limit = limit + 10
-        products(limit)
-    },3000)
+        products()
+    },300)
 }
 window.addEventListener('scroll', () => {
-    const { scrollHeight, scrollTop, clientHeight } = document.documentElement
-    if (clientHeight + scrollTop >= scrollHeight) {
+    let { scrollHeight, scrollTop, clientHeight } = document.documentElement
+    if ((clientHeight + scrollTop) > scrollHeight) {
         console.log('bottom')
         showData();
     }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="data_jinja" name="[{{ change }},{{ status }}]">
     <title>Login/Sign Up | Pro-Cart</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
@@ -24,23 +23,25 @@
             <div class="bg-white h-full w-full flex items-center justify-center ">
                 <!-- login form -->
                 <form id="login" class="google-sprade-sheet 
-                 space-y-8 text-center w-full px-10 h-fit mt-10" action="/login">
+                 space-y-8 text-center w-full px-10 h-fit mt-10" action="/login" method="post">
                     
                     <label id="while_number_input" class=" text-center text-gray-700 capitalize font-semibold" for="user_moble">please enter your Mobile number to <br> login/signUp for <span class="text-2xl px-1 text-rose-500 font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
+                        ">Pro-Cart</span></label>
+                    <label id="while_password_input" class="hidden text-center text-gray-700 capitalize font-semibold" for="user_moble">please enter your password to <br> login for <span class="text-2xl px-1 text-rose-500 font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
                         ">Pro-Cart</span></label>
 
                         <!-- mobile -->
                         
                     <input type="tel" class="w-full border shadow-md px-3 py-3 rounded-md text-gray-700" name="number" id="number_collect" placeholder="Mobile Number" required>
                         
-                    <input type="tel" class="hidden w-full border shadow-md px-3 py-3 rounded-md text-gray-700" name="password" id="password_collect" placeholder="password" required>
+                    <input type="password" onkeyup="hidepass(this.value)" class="hidden w-full border shadow-md px-3 py-3 rounded-md text-gray-700" name="password" id="password_collect" placeholder="password" autocomplete="on" >
                     
 
                     <button type="submit" class="w-full rounded bg-rose-500 py-3 font-semibold">Next</button>
                 </form>
 
                 <!-- sing up form -->
-                <form id="sign_up" class="hidden space-y-2 text-center w-full px-10 h-fit my-5" action="/signup">
+                <form id="sign_up" method="post" class="hidden space-y-2 text-center w-full px-10 h-fit my-5" action="/signup">
                     
                     <h1 class="text-center text-gray-700 capitalize font-semibold" for=""><span class="text-2xl px-1 text-rose-500 font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
                         ">Pro-Cart</span><br> Sing up </h1>
@@ -106,21 +107,36 @@
             
         </script>
         <script type='text/javascript'>
-            const login = document.getElementById('login')
-            const signup = document.getElementById('sign_up')
-            let code_data =  document.getElementById('data_jinja')
-            //code_data=lsit of data
-            if( code_data  == true ){
-                login.classList.add('hidden')
-                login.classList.remove('flex')
-                signup.classList.add('flex')
-                signup.classList.remove('hidden')
+            const login_form = document.getElementById('login')
+            const login_number = document.getElementById('number_collect')
+            const login_password = document.getElementById('password_collect')
+            const signUp_form = document.getElementById('sign_up')
+            const top_title = document.getElementById('while_number_input')
+            let status_data = {{ status|safe }}
+            let change_data = {{ change|safe }}
+            console.log(status_data,change_data)
+            //status=lsit of data
+            
+            if( status_data == true){
+                document.getElementById('while_password_input').classList.remove('hidden')
+                top_title.classList.add('hidden')
+                login_number.classList.add('hidden')
+                login_number.removeAttribute('required')
+                login_password.classList.remove('hidden')
+                login_password.setAttribute('required')
+                console.log('do')
             }
-            else if(code_data == false){
-                pass
+            else if(change == true && status_data==false){
+                //hide the login form
+                alert('opps! check your password is correct or not')
             }
-            else{
-                pass
+            else if(status_data==false && change_data==false){
+                if(confirm("you don't have account sign up now")){
+
+                    login_form.classList.add('hidden')
+                    signUp_form.classList.remove('hidden')
+                }
+                
             }
         </script>
     </main>

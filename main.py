@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, session, redirect
 # import requests as re
 import asyncio
 import aiohttp
+import json
 app = Flask(__name__)
 
 # fetching dada
@@ -36,7 +37,7 @@ def home():
     gender_list = set()
     product_list = []
     async def product_get():
-        product_url = 'https://script.google.com/macros/s/AKfycbxXkYktl5xZwbixGaAWvSJbc9zSkZaN6bwiJX9CVN5Joxcm7-AgMhibyF0X4vf-nBjz/exec?limit=10'
+        product_url = 'https://script.google.com/macros/s/AKfycbx3y_f-9SI7XlH2xotL6Ia2G55n0qUCBjwi4uG4VF_cj46ODB0Sti1F2KocpiwCZRHY/exec'
         async with aiohttp.ClientSession() as on_session:
             response = await on_session.get(product_url)
             data = await response.json()
@@ -47,7 +48,7 @@ def home():
                 gender_list.add(i['gender'])
     asyncio.run(product_get()) 
     print(gender_list, category_list, len(product_list))
-    return render_template('index.html',category = category_list,gender= gender_list, products=product_list)
+    return render_template('index.html',category = category_list,gender= gender_list, products=product_list[0:10])
 
 
 @app.route('/wishlist')
@@ -59,42 +60,34 @@ def login():
     if request.method=='POST':
         number = request.form.get('number')
         password = request.form.get('passoword')
-        if(number!=None):
-            change = False
-            data = number
+        change = False
+        if(number!=None ):
+            data = f'?number={number}'
         if(password!=None):
-            change = True
-            data = password 
+            data = f'?password={password}'
+            change=True 
         async def statusget():
-            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec?number="+data    
-            async with aiohttp.ClientSession as varify_session:
+            status_code=None
+            change_main = False
+            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec"+data    
+            async with aiohttp.ClientSession() as varify_session:
                 response = await varify_session.get(url)
                 re = await response.json()   
-                status_code = re.status
-                print(status_code)    
-                return status_code
-        status=aiohttp.run(statusget())
-        return render_template('login.html',status = status,change = change)
-    return render_template('login.html',status=None,change=None)
+                status_code = re['status']
+                if(status_code == True and change==False):
+                    change_main = False
+                elif(status_code == True and change == True):
+                    change_main = True
+                return [status_code ,change_main]
+        output = asyncio.run(statusget())
+        # True = successfull()
+        if(output[0]==True and output[1]==True):
+            return redirect('/')
+        print(output)
+        return render_template('login.html', status = json.dumps(output[0]), change = json.dumps(output[1]))
+    return render_template('login.html',status=json.dumps(None),change=json.dumps(None))
 
 
-@app.route('/signup', methods=['POST'])
-def signup():
-    if request.method == 'POST':
-        name = request.form.get('Uname')
-        age = request.form.get('Uage')
-        phone = request.form.get('Unumber')
-        email = request.form.get('Uemail')
-        password = request.form.get('Upassword')
-        async def signup_data():
-            product_url = 'https://script.google.com/macros/s/AKfycbxXkYktl5xZwbixGaAWvSJbc9zSkZaN6bwiJX9CVN5Joxcm7-AgMhibyF0X4vf-nBjz/exec?limit=10'
-            async with aiohttp.ClientSession() as on_session:
-                response = await on_session.get(product_url)
-                data = await response.json()
-                
-        asyncio.run(signup_data())
-        return redirect('/')
-    return render_template('login.html')
 
 @app.route('/order')
 def order():
