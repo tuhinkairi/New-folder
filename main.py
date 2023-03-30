@@ -61,15 +61,18 @@ def login():
         number = request.form.get('number')
         password = request.form.get('passoword')
         change = False
+        redirecting = False
         if(number!=None ):
             data = f'?number={number}'
         if(password!=None):
             data = f'?password={password}'
+            redirecting = True
             change=True 
         async def statusget():
             status_code=None
             change_main = False
             url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec"+data    
+            
             async with aiohttp.ClientSession() as varify_session:
                 response = await varify_session.get(url)
                 re = await response.json()   
@@ -78,10 +81,10 @@ def login():
                     change_main = False
                 elif(status_code == True and change == True):
                     change_main = True
-                return [status_code ,change_main]
+                return [status_code ,change_main,redirecting]
         output = asyncio.run(statusget())
         # True = successfull()
-        if(output[0]==True and output[1]==True):
+        if(output[0]==True and output[-1]==True):
             return redirect('/')
         print(output)
         return render_template('login.html', status = json.dumps(output[0]), change = json.dumps(output[1]))

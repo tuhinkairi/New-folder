@@ -10,7 +10,7 @@
     {% block body %}
     <main class="bg-gray-100">
         <section class="text-gray-600 body-font relative">
-            <form method="post" action="https://script.google.com/macros/s/AKfycbw9z0EXglLJ0lH4JQyZfF-jUa4_SXiw_uoapmQBa0eBMJm8nAtV3kzWYFcM-Va-AFY/exec">
+            <form method="post" id="form_send" action="https://script.google.com/macros/s/AKfycbw9z0EXglLJ0lH4JQyZfF-jUa4_SXiw_uoapmQBa0eBMJm8nAtV3kzWYFcM-Va-AFY/exec">
             <div class="container px-5 py-24 mx-auto">
               <div class="flex flex-col text-center w-full mb-12">
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
@@ -51,6 +51,6 @@
             </div>
             </form>
           </section>
-          
+          <script href="{{ url_for('static',filename="database_js/contact_submit.js") }}"></script>
     </main>
     {% endblock %}
