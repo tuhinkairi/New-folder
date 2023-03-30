@@ -54,6 +54,17 @@ def home():
 def wishlist():
     return render_template('wishlist.html')
 
+@app.route('/login', methods=['GET','POST'])
+def login():
+    if request.method=='POST':
+        number = request.form.get('number')
+        password = request.form.get('passoword') 
+        async def statusget():
+            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec?number="+number    
+            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec?password="+password    
+
+    return render_template('login.html',status='')
+
 @app.route('/signup', methods=['POST'])
 def signup():
     if request.method == 'POST':
