@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta id="data_jinja" name="[{{ change }},{{ status }}]">
     <title>Login/Sign Up | Pro-Cart</title>
     <link rel="stylesheet" href="static/css/style.css">
 </head>
@@ -103,6 +104,24 @@
                 }
             }
             
+        </script>
+        <script type='text/javascript'>
+            const login = document.getElementById('login')
+            const signup = document.getElementById('sign_up')
+            let code_data =  document.getElementById('data_jinja')
+            //code_data=lsit of data
+            if( code_data  == true ){
+                login.classList.add('hidden')
+                login.classList.remove('flex')
+                signup.classList.add('flex')
+                signup.classList.remove('hidden')
+            }
+            else if(code_data == false){
+                pass
+            }
+            else{
+                pass
+            }
         </script>
     </main>
 </body>

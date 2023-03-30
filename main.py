@@ -58,12 +58,25 @@ def wishlist():
 def login():
     if request.method=='POST':
         number = request.form.get('number')
-        password = request.form.get('passoword') 
+        password = request.form.get('passoword')
+        if(number!=None):
+            change = False
+            data = number
+        if(password!=None):
+            change = True
+            data = password 
         async def statusget():
-            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec?number="+number    
-            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec?password="+password    
+            url="https://script.google.com/macros/s/AKfycbyDhFLMFOMCAFv9MwRZ-qwVoTXDsefy9RBO34UcyUY8xaaWrEPKeyUsqeLXxTiC41Af/exec?number="+data    
+            async with aiohttp.ClientSession as varify_session:
+                response = await varify_session.get(url)
+                re = await response.json()   
+                status_code = re.status
+                print(status_code)    
+                return status_code
+        status=aiohttp.run(statusget())
+        return render_template('login.html',status = status,change = change)
+    return render_template('login.html',status=None,change=None)
 
-    return render_template('login.html',status='')
 
 @app.route('/signup', methods=['POST'])
 def signup():
