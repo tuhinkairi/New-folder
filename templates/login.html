@@ -41,7 +41,7 @@
                 </form>
 
                 <!-- sing up form -->
-                <form id="sign_up" method="post" class="hidden space-y-2 text-center w-full px-10 h-fit my-5" action="/signup">
+                <form id="sign_up" method="post" class="hidden space-y-2 text-center w-full px-10 h-fit my-5" action="https://script.google.com/macros/s/AKfycbwpL81uyPQ92uVGpro2ax67ofQQuniLvoMvM9M64Fr9ynAql4d2jL4UcaJcAWV5LMt7/exec">
                     
                     <h1 class="text-center text-gray-700 capitalize font-semibold" for=""><span class="text-2xl px-1 text-rose-500 font-bold  capitalize  " style="font-family: 'Lobster', 'Pacifico',cursive;
                         ">Pro-Cart</span><br> Sing up </h1>
@@ -49,20 +49,20 @@
                     <section class=" grid grid-cols-2">
                         <span class="w-full items-center just grid grid-rows-2 px-2">
                             <label class="text-gray-700 text-sm font-semibold text-start" for="name">Your Name</label>
-                            <input type="text" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="Uname" id="Uname" placeholder="Full Name" required>
+                            <input type="text" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="name" id="Uname" placeholder="Full Name" required>
                         </span>
                         <span class="w-full items-center just grid grid-rows-2 px-2 ">
                             <label class="text-gray-700 text-sm font-semibold text-start" for="Unumber">Mobile Number</label>
-                            <input type="tel" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="Unumber" id="Unumber" placeholder="Mobile Number" required>
+                            <input type="tel" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="number" id="Unumber" placeholder="Mobile Number" required>
                         </span>
                         
                         <span class="w-full items-center just grid grid-rows-2 px-2 ">
                             <label class="text-gray-700 text-sm font-semibold text-start" for="Uemail">Email</label>
-                            <input type="email" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="Uemail" id="Uemail" placeholder="Email" required>
+                            <input type="email" class=" border shadow-md px-3 py-3 rounded-md text-gray-700" name="email" id="Uemail" placeholder="Email" required>
                         </span>
                         <span class="w-full items-center just grid grid-rows-2 px-2 ">
                             <label class="text-gray-700 text-sm font-semibold text-start" for="Uage">Age</label>
-                            <input type="number" class=" border shadow-md px-3 py-3 rounded-md w-fit text-gray-700" min='16' value="16" name="Uage" id="Uage"  required>
+                            <input type="number" class=" border shadow-md px-3 py-3 rounded-md w-fit text-gray-700" min='16' value="16" name="age" id="Uage"  required>
                         </span>
                     </section>    
                     
@@ -73,7 +73,7 @@
                    
                     <span class="w-full items-center just grid grid-rows-2 px-2 ">
                     <label class="text-gray-700 text-sm font-semibold text-start" for="Upass">Confirm Password</label>
-                    <input type="Password" onkeypress="check_pass()" onkeyup="hidepass(this.value)" class=" border shadow-md px-3 py-3 rounded-md  text-gray-700" name="Upassword" id="Upassvar" placeholder="Retype Password" required>
+                    <input type="Password" onkeypress="check_pass()" onkeyup="hidepass(this.value)" class=" border shadow-md px-3 py-3 rounded-md  text-gray-700" name="password" id="Upassvar" placeholder="Retype Password" required>
                     </span>
                    
                     <button type="submit" id="send_submit" class="w-full mt-5 ll rounded bg-rose-500 py-3 font-semibold" disabled>Next</button>

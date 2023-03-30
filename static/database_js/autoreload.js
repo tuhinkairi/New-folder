@@ -12,7 +12,7 @@ async function products() {
     output.map(i => {
         // populate inner html
 
-        let container = `<div
+        let container = ` <a href='/cart'><div
         class="max-w-[50%] sm:max-w-[300px] sm:m-1 rounded-md border border-[rgb(0,0,0,.2)] sm:px-2 text-gray-700 bg-white" style="height: auto;">
         <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1 -mb-10 relative z-10">
             <span class="cursor-pointer material-symbols-outlined">
@@ -63,7 +63,7 @@ async function products() {
                     class="text-gray-500 line-through " style="margin-left: 3px;">1200</span><span
                     class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
         </section>
-    </div>`
+    </div></a>`
         product_div.insertAdjacentHTML('beforeend', container)
     })
 

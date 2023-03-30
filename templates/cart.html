@@ -183,11 +183,12 @@
                             </div>
                         </div>
                         <div class="flex">
-                            <span class="title-font font-medium text-2xl text-gray-900">$58.00</span>
+                            <span class="title-font font-medium text-2xl text-gray-900">&#x20B9; 580.00</span>
+                            <a href="/order">
                             <button
-                                class="flex ml-auto text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-900 rounded">Submit</button>
+                                class="flex ml-auto text-white bg-gray-800 border-0 py-2 px-6 focus:outline-none hover:bg-gray-900 rounded">buy product</button><a>
                             <button
-                                class="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                                class="material-symbols-outlined rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     class="w-5 h-5" viewBox="0 0 24 24">
                                     <path
@@ -206,348 +207,67 @@
         <h1 class="py-5 lg:py-10 text-gray-700 font-semibold text-2xl">RECOMMENDED PRODUCTS</h1>
         <section class="flex overflow-x-auto space-x-1 ">
             <!-- cards section -->
-            <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
-                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
-                    <span class="cursor-pointer material-symbols-outlined">
-                        add_shopping_cart
-                    </span><span class="cursor-pointer material-symbols-outlined">
-                        favorite
-                    </span></div> <img class="rounded-md py-2 max-w-[205px] md:max-w-[230px]" src="static/img/pic15.jpg"
-                    alt="card1">
-                <section class="text-data pb-5 px-5 space-y-2">
-                    <h1 class="text-gray-500 font-semibold w-fit capitalize">Lorem ipsum dolor sit amet.
-                    </h1>
+            
+            {% for i in products %}
+                <a href="/order">
+                        <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
+                            <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
+                                <span class="cursor-pointer material-symbols-outlined">
+                                    add_shopping_cart
+                                </span><span class="cursor-pointer material-symbols-outlined">
+                                    favorite
+                                </span></div> <img class="rounded-md py-2 max-w-[230px]" src="{{ i.image_url }}"
+                                alt="card1">
+                            <section class="text-data pb-5 px-5 space-y-2">
+                                <h1 class="text-gray-500 font-semibold w-fit capitalize">{{ i.product_name }}
+                                </h1>
 
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <span class="text-gray-400 ml-3">4 Reviews</span>
-                    </span>
+                                <span class="flex items-center">
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                                        </path>
+                                    </svg>
+                                    <span class="text-gray-400 ml-3">4 Reviews</span>
+                                </span>
 
-                    <h1><span class="font-semibold"> &#x20B9;499 </span><span
-                            class="text-gray-500 line-through">1200</span><span
-                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
+                                <h1><span class="font-semibold"> &#x20B9;{{ i.price }} </span><span
+                                        class="text-gray-500 line-through"> 1200</span><span
+                                        class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
 
-                </section>
-            </div>
-            <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
-                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
-                    <span class="cursor-pointer material-symbols-outlined">
-                        add_shopping_cart
-                    </span><span class="cursor-pointer material-symbols-outlined">
-                        favorite
-                    </span></div> <img class="rounded-md py-2 max-w-[205px] md:max-w-[230px]" src="static/img/pic14.jpg"
-                    alt="card1">
-                <section class="text-data pb-5 px-5 space-y-2">
-                    <h1 class="text-gray-500 font-semibold w-fit capitalize">Lorem ipsum dolor sit amet.
-                    </h1>
-
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <span class="text-gray-400 ml-3">4 Reviews</span>
-                    </span>
-
-                    <h1><span class="font-semibold"> &#x20B9;499 </span><span
-                            class="text-gray-500 line-through">1200</span><span
-                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
-
-                </section>
-            </div>
-            <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
-                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
-                    <span class="cursor-pointer material-symbols-outlined">
-                        add_shopping_cart
-                    </span><span class="cursor-pointer material-symbols-outlined">
-                        favorite
-                    </span></div> <img class="rounded-md py-2 max-w-[205px] md:max-w-[230px]" src="static/img/pic13.jpg"
-                    alt="card1">
-                <section class="text-data pb-5 px-5 space-y-2">
-                    <h1 class="text-gray-500 font-semibold w-fit capitalize">Lorem ipsum dolor sit amet.
-                    </h1>
-
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <span class="text-gray-400 ml-3">4 Reviews</span>
-                    </span>
-
-                    <h1><span class="font-semibold"> &#x20B9;499 </span><span
-                            class="text-gray-500 line-through">1200</span><span
-                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
-
-                </section>
-            </div>
-            <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
-                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
-                    <span class="cursor-pointer material-symbols-outlined">
-                        add_shopping_cart
-                    </span><span class="cursor-pointer material-symbols-outlined">
-                        favorite
-                    </span></div> <img class="rounded-md py-2 max-w-[205px] md:max-w-[230px]" src="static/img/pic12.jpg"
-                    alt="card1">
-                <section class="text-data pb-5 px-5 space-y-2">
-                    <h1 class="text-gray-500 font-semibold w-fit capitalize">Lorem ipsum dolor sit amet.
-                    </h1>
-
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <span class="text-gray-400 ml-3">4 Reviews</span>
-                    </span>
-
-                    <h1><span class="font-semibold"> &#x20B9;499 </span><span
-                            class="text-gray-500 line-through">1200</span><span
-                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
-
-                </section>
-            </div>
-            <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
-                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
-                    <span class="cursor-pointer material-symbols-outlined">
-                        add_shopping_cart
-                    </span><span class="cursor-pointer material-symbols-outlined">
-                        favorite
-                    </span></div> <img class="rounded-md py-2 max-w-[205px] md:max-w-[230px]" src="static/img/pic11.jpg"
-                    alt="card1">
-                <section class="text-data pb-5 px-5 space-y-2">
-                    <h1 class="text-gray-500 font-semibold w-fit capitalize">Lorem ipsum dolor sit amet.
-                    </h1>
-
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <span class="text-gray-400 ml-3">4 Reviews</span>
-                    </span>
-
-                    <h1><span class="font-semibold"> &#x20B9;499 </span><span
-                            class="text-gray-500 line-through">1200</span><span
-                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
-
-                </section>
-            </div>
-            <div class="  rounded-md border border-[rgb(0,0,0,.2)] px-2 text-gray-700 bg-white">
-                <div class="w-full flex items-center pt-4 px-2 justify-end space-x-1  -mb-10 relative z-10">
-                    <span class="cursor-pointer material-symbols-outlined">
-                        add_shopping_cart
-                    </span><span class="cursor-pointer material-symbols-outlined">
-                        favorite
-                    </span></div> <img class="rounded-md py-2 max-w-[205px] md:max-w-[230px]" src="static/img/pic8.jpg"
-                    alt="card1">
-                <section class="text-data pb-5 px-5 space-y-2">
-                    <h1 class="text-gray-500 font-semibold w-fit capitalize">Lorem ipsum dolor sit amet.
-                    </h1>
-
-                    <span class="flex items-center">
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-yellow-300"
-                            viewBox="0 0 24 24">
-                            <path
-                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
-                            </path>
-                        </svg>
-                        <span class="text-gray-400 ml-3">4 Reviews</span>
-                    </span>
-
-                    <h1><span class="font-semibold"> &#x20B9;499 </span><span
-                            class="text-gray-500 line-through">1200</span><span
-                            class="px-2 text-rose-500 float-right font-bold">42% off</span></h1>
-
-                </section>
-            </div>
+                            </section>
+                        </div></a>
+                        {% endfor %}
         </section>
     </section>
     <script  src="{{ url_for('static',filename = 'js/alldatachange.js') }}"></script>

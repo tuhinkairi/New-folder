@@ -2,55 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Pro-Cart</title>
-    {% extends 'layout.html' %}
-    {% block body %}
-    <main class="bg-gray-100">
-        <section class="text-gray-600 body-font relative">
-            <form method="post" id="form_send" action="https://script.google.com/macros/s/AKfycbw9z0EXglLJ0lH4JQyZfF-jUa4_SXiw_uoapmQBa0eBMJm8nAtV3kzWYFcM-Va-AFY/exec">
-            <div class="container px-5 py-24 mx-auto">
-              <div class="flex flex-col text-center w-full mb-12">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
-                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
-              </div>
-              <div class="lg:w-1/3  mx-auto">
-                <div class="flex flex-wrap -m-2">
-                  <div class="p-2 w-1/2">
-                    <div class="relative">
-                      <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-                      <input type="text" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
-                    </div>
-                  </div>
-                  <div class="p-2 w-1/2">
-                    <div class="relative">
-                      <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                      <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <div class="relative">
-                      <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                      <textarea id="message" name="content" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out " required></textarea>
-                    </div>
-                  </div>
-                  <div class="p-2 w-full">
-                    <button type="submit" class="flex mx-auto text-white bg-rose-500 border-0 py-2 px-8 focus:outline-none hover:bg-rose-700 rounded text-lg">submit</button>
-                  </div>
-                  <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                    <a class="text-red-500">Pro-Cart@email.com</a>
-                    <p class="leading-normal my-5">49 Smith St.
-                      <br>Saint Cloud, MN 56301
-                    </p>
-                    
-                  </div>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Pro-Cart</title>
+  {% extends 'layout.html' %}
+  {% block body %}
+  <main class="bg-gray-100">
+    <section class="text-gray-600 body-font relative">
+      <form id="form_send" action="https://script.google.com/macros/s/AKfycbytIP4YGdn8fP67BMWgtgyIZGzTRZcccIs7gGCuiN7elAdAgDnQ9YyExrHGOK6_22cA/exec" method='post'>
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base capitalize">Having any problems? contact us </p>
+          </div>
+          <div class="lg:w-1/3  mx-auto">
+            <div class="flex flex-wrap -m-2">
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                  <input type="text" id="name" name="name"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required>
                 </div>
               </div>
+              <div class="p-2 w-1/2">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                  <input type="email" id="email" name="email"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required>
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                  <textarea id="message" name="content"
+                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out "
+                    required></textarea>
+                </div>
+              </div>
+              <div class="p-2 w-full">
+                <button type="submit" id="submit_btn"
+                  class="flex mx-auto text-white bg-rose-500 border-0 py-2 px-8 focus:outline-none hover:bg-rose-700 rounded text-lg">submit</button>
+              </div>
+              <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+                <a class="text-red-500">Pro-Cart@email.com</a>
+                <p class="leading-normal my-5">49 Smith St.
+                  <br>Saint Cloud, MN 56301
+                </p>
+
+              </div>
             </div>
-            </form>
-          </section>
-          <script href="{{ url_for('static',filename="database_js/contact_submit.js") }}"></script>
-    </main>
-    {% endblock %}
+          </div>
+        </div>
+      </form>
+    </section>
+    <!-- <script href="{{ url_for('static',filename='database_js/contact_submit.js') }}"></script> -->
+    <!-- <script>
+      const form = document.getElementById('form_send')
+      const url =
+        'https://script.google.com/macros/s/AKfycbwRfM9zsVY4e5tHm1Q0871Yd1_yQDIGGa5IoLW3Ta9IHFB9tRe3ui0UHsbMkKNDJ7En/exec'
+
+        document.getElementById('form_send').addEventListener('submit', (e) => {
+        e.preventDefault();
+        let data = new FormData(form)
+        console.log(data)
+        fetch(url, {
+          method:'POST',
+          body:data
+        }).then(res => res.text()).then(data => console.log(data))
+      })
+    </script> -->
+  </main>
+  {% endblock %}
